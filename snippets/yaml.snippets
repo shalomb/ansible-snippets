@@ -1,8 +1,21 @@
 
 snippet play
-	- hosts: ${1:group}
-	  user: ${2:root}
-	  tasks:
+	- name: ${1:group}
+	  hosts:
+	    - ${2:group}
+	  roles:
+	    - role: ${3:foo}
+	  #tasks: ${4}
+	  #gather_facts: ${5:True}
+		#become: ${6:False}
+	  #user: ${7:ansible}
+	  #vars_files: ${8}
+	  #vars:
+	  #  play: ${9}
+	  #tags:
+	  #  - ${10}
+	${11}
+	${12}
 
 snippet a10_server
 	- name: ${1:task_description}
