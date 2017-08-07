@@ -8054,21 +8054,21 @@ snippet fetch
 snippet file
 	- name: ${1:task_description}
 	  file:
-	    src: ${2}
-	    path: ${3:[]}
-	    #force: ${4:no}
-	    #group: ${5}
-	    #state: ${6:file}
-	    #unsafe_writes: ${7}
-	    #selevel: ${8:s0}
-	    #seuser: ${9}
-	    #recurse: ${10:no}
-	    #serole: ${11}
-	    #setype: ${12}
-	    #follow: ${13:no}
-	    #mode: ${14}
-	    #owner: ${15}
-	    #attributes: ${16:None}
+	    #state:          ${2:file|link|directory|hard|touch|absent}
+	    #src:            ${3}
+	    path:            ${4:[]}
+	    #owner:          ${5:ansible}
+	    #group:          ${6:ansible}
+	    #mode:           '${7:0750}'
+	    #recurse:        ${8:no}
+	    #force:          ${9:no}
+	    #unsafe_writes:  ${10}
+	    #selevel:        ${11:s0}
+	    #seuser:         ${12}
+	    #serole:         ${13}
+	    #setype:         ${14}
+	    #follow:         ${15:no}
+	    #attributes:     ${16:None}
 
 snippet filesystem
 	- name: ${1:task_description}
