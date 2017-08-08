@@ -8,7 +8,7 @@ snippet play
 	  #tasks: ${4}
 	  #gather_facts: ${5:True}
 		#become: ${6:False}
-	  #user: ${7:ansible}
+	  #remote_user: ${7:ansible}
 	  #vars_files: ${8}
 	  #vars:
 	  #  play: ${9}
@@ -16,6 +16,20 @@ snippet play
 	  #  - ${10}
 	${11}
 	${12}
+
+snippet handler
+	- name: ${1:Handler foo}
+	  action:
+	    service:
+	      name: ${2}
+		    state: ${3:restarted|started|stopped|reloaded}
+		${4}
+
+snippet flush_handlers
+	- name: flush handlers
+	  meta: flush_handlers
+	  tags:
+	    - handlers
 
 snippet a10_server
 	- name: ${1:task_description}
