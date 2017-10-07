@@ -366,14 +366,14 @@ snippet apt
 snippet apt_key
 	- name: ${1:task_description}
 	  apt_key:
-	    #keyserver: ${2:none}
-	    #url: ${3:none}
-	    #data: ${4:none}
-	    #keyring: ${5:none}
-	    #state: ${6:present}
-	    #file: ${7:none}
-	    #validate_certs: ${8:yes}
-	    #id: ${9:none}
+	    id:               ${1:none}
+	    keyserver:        ${2:none}
+	    state:            ${3:present}
+	    #url:             ${4:none}
+	    #data:            ${6:none}
+	    #keyring:         ${7:none}
+	    #file:            ${8:none}
+	    #validate_certs:  ${9:yes}
 
 snippet apt_repository
 	- name: ${1:task_description}
