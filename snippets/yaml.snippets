@@ -8072,13 +8072,13 @@ snippet fail
 	    #msg: ${2:'Failed as requested from task'}
 
 snippet fetch
-	- name: ${1:task_description}
+	- name: ${1:Fetch}
 	  fetch:
-	    dest: ${2:None}
-	    src: ${3:None}
-	    #validate_checksum: ${4:yes}
-	    #fail_on_missing: ${5:yes}
-	    #flat: ${6}
+	    src:    '${2:/}'
+	    dest:   '${3:logs/{{ inventory_hostname }}}'
+	    #flat:  ${4:yes}
+	    #validate_checksum:  ${5:yes}
+	    #fail_on_missing:    ${6:yes}
 
 snippet file
 	- name: ${1:task_description}
