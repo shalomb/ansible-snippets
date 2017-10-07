@@ -3,19 +3,22 @@ snippet play
 	- name: ${1:group}
 	  hosts:
 	    - ${2:group}
+	  # pre_tasks:
+	  #   - ${3}
 	  roles:
-	    - role: ${3:foo}
-	  #tasks: ${4}
-	  #gather_facts: ${5:True}
-		#become: ${6:False}
-	  #remote_user: ${7:ansible}
-	  #vars_files: ${8}
+	    - role: ${4:foo}
+	  #tasks:
+	  #  - ${5}
+	  #gather_facts: ${6:True}
+		#become: ${7:False}
+	  #remote_user: ${8:ansible}
+	  #vars_files: ${9}
 	  #vars:
-	  #  play: ${9}
+	  #  play: ${10}
 	  #tags:
-	  #  - ${10}
-	${11}
+	  #  - ${11}
 	${12}
+	${13}
 
 snippet handler
 	- name: ${1:Handler foo}
@@ -127,8 +130,9 @@ snippet acl
 snippet add_host
 	- name: ${1:task_description}
 	  add_host:
-	    name: ${2}
-	    #groups: ${3}
+	    name:     ${2}
+	    #groups:  ${3}
+	    #foo:     ${4}
 
 snippet airbrake_deployment
 	- name: ${1:task_description}
