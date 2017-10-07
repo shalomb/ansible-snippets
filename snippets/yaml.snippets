@@ -4863,11 +4863,14 @@ snippet cnos_vlan
 snippet command
 	- name: ${1:task_description}
 	  command:
-	    free_form: ${2}
-	    #creates: ${3}
-	    #warn: ${4:yes}
-	    #chdir: ${5}
-	    #removes: ${6}
+	    ${2}
+	  args:
+	    #chdir:   ${3}
+	    #creates: ${4}
+	    #removes: ${5}
+		#warn: ${6:yes}
+		#delegate_to: ${7:localhost}
+	${8}
 
 snippet composer
 	- name: ${1:task_description}
@@ -18096,12 +18099,15 @@ snippet sf_volume_manager
 snippet shell
 	- name: ${1:task_description}
 	  shell:
-	    free_form: ${2:None}
-	    #warn: ${3:True}
-	    #creates: ${4}
-	    #executable: ${5}
-	    #chdir: ${6}
-	    #removes: ${7}
+	    ${2}
+	  args:
+	    executable:   ${3:/bin/bash}
+	    #chdir:       ${4}
+	    #creates:     ${5}
+	    #removes:     ${6}
+		#warn: ${7:True}
+		#delegate_to: ${8:localhost}
+	${9}
 
 snippet sl_vm
 	- name: ${1:task_description}
