@@ -8067,9 +8067,9 @@ snippet facter
 	  facter:
 
 snippet fail
-	- name: ${1:task_description}
+	- name: ${1:Fail task}
 	  fail:
-	    #msg: ${2:'Failed as requested from task'}
+	    msg: '${2:Fail requested}'
 
 snippet fetch
 	- name: ${1:Fetch}
