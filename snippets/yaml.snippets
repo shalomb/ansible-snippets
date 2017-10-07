@@ -343,23 +343,25 @@ snippet apk
 	    #repository: ${7}
 
 snippet apt
-	- name: ${1:task_description}
+	- name: ${1:Install Packages}
 	  apt:
-	    #dpkg_options: ${2:force-confdef,force-confold}
-	    #upgrade: ${3:no}
-	    #force: ${4:no}
-	    #name: ${5}
-	    #autoclean: ${6}
-	    #purge: ${7}
-	    #allow_unauthenticated: ${8:no}
-	    #state: ${9:present}
-	    #autoremove: ${10}
-	    #update_cache: ${11}
-	    #default_release: ${12}
-	    #only_upgrade: ${13}
-	    #cache_valid_time: ${14}
-	    #deb: ${15}
-	    #install_recommends: ${16}
+	    name:                '${3:{{ item }}}'
+	    state:               ${4:present|latest|absent|build-dep}
+	    update_cache:        ${5:no}
+	    cache_valid_time:    ${6:3600}
+	    install_recommends:  ${7:no}
+	    #force:              ${8:no}
+	    #upgrade:            ${9:no|yes|safe|full|dist}
+	    #autoclean:          ${10}
+	    #purge:              ${11}
+	    #autoremove:         ${12}
+	    #default_release:    ${13}
+	    #only_upgrade:       ${14}
+	    #deb:                ${15}
+	    #dpkg_options:       ${16:force-confdef,force-confold}
+	    #allow_unauthenticated: ${17:no}
+	  with_items:
+	    - ${2}
 
 snippet apt_key
 	- name: ${1:task_description}
