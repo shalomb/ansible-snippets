@@ -19012,28 +19012,29 @@ snippet ufw
 	    #delete: ${18}
 
 snippet unarchive
-	- name: ${1:task_description}
+	- name: ${1:Extract}
 	  unarchive:
-	    src: ${2}
-	    dest: ${3}
-	    #exclude: ${4}
-	    #keep_newer: ${5:no}
-	    #group: ${6}
-	    #remote_src: ${7:no}
-	    #unsafe_writes: ${8}
-	    #selevel: ${9:s0}
-	    #list_files: ${10:no}
-	    #seuser: ${11}
-	    #decrypt: ${12:Yes}
-	    #serole: ${13}
-	    #creates: ${14}
-	    #setype: ${15}
-	    #mode: '${16:0640}'
-	    #extra_opts: ${17}
-	    #owner: ${18}
-	    #attributes: ${19:None}
-	    #copy: ${20:yes}
-	    #validate_certs: ${21:yes}
+	    src:              ${2}
+	    dest:             ${3}
+	    remote_src:       ${4:yes}
+	    #exclude:
+	    #  - ${5}
+	    #owner:           ${6:root}
+	    #group:           ${7:root}
+	    #mode:            '${8:0640}'
+	    #creates:         ${9}
+	    #extra_opts:      ${10}
+	    #keep_newer:      ${11:no}
+	    #unsafe_writes:   ${12:no}
+	    #selevel:         ${13:s0}
+	    #list_files:      ${14:no}
+	    #decrypt:         ${15:Yes}
+	    #seuser:          ${16}
+	    #serole:          ${17}
+	    #setype:          ${19}
+	    #attributes:      ${20:None}
+	    #validate_certs:  ${21:yes}
+	${22}
 
 snippet uptimerobot
 	- name: ${1:task_description}
