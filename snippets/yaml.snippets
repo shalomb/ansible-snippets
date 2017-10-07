@@ -5971,11 +5971,11 @@ snippet debconf
 	    #unseen: ${6}
 
 snippet debug
-	- name: ${1:task_description}
+	- name: '${1:Debug} {{ ${2:inventory_hostname} }}'
 	  debug:
-	    #msg: ${2:Hello world!}
-	    #var: ${3}
-	    #verbosity: ${4}
+	    msg:  'debug: {{ ${3:inventory_hostname} }}'
+	    #var: ${4:hostvars[inventory_hostname]}
+	    #verbosity: ${5:1}
 
 snippet dellos10_command
 	- name: ${1:task_description}
