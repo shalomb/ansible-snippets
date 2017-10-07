@@ -380,15 +380,16 @@ snippet apt_key
 	    #validate_certs:  ${9:yes}
 
 snippet apt_repository
-	- name: ${1:task_description}
+	- name: ${1:Add repository}
 	  apt_repository:
-	    repo: ${2:none}
-	    #state: ${3:present}
-	    #update_cache: ${4:yes}
-	    #mode: '${5:0420}'
-	    #codename: ${6}
-	    #validate_certs: ${7:yes}
-	    #filename: ${8}
+	    repo:             'deb  ${2:http://httpredir.debian.org/debian  main contrib non-free}'
+	    filename:         ${3}
+	    mode:             '${4:0420}'
+	    state:            ${5:present|absent}
+	    update_cache:     ${6:yes}
+	    #codename:        ${7}
+	    #validate_certs:  ${8:yes}
+	${9}
 
 snippet apt_rpm
 	- name: ${1:task_description}
