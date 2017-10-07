@@ -4957,28 +4957,29 @@ snippet consul_session
 	    #port: ${12:8500}
 
 snippet copy
-	- name: ${1:task_description}
+	- name: ${1:Copy}
 	  copy:
-	    dest: ${2}
-	    #directory_mode: ${3}
-	    #force: ${4:yes}
-	    #remote_src: ${5:no}
-	    #selevel: ${6:s0}
-	    #decrypt: ${7:Yes}
-	    #owner: ${8}
-	    #follow: ${9:no}
-	    #validate: ${10:None}
-	    #local_follow: ${11:yes}
-	    #src: ${12}
-	    #group: ${13}
-	    #unsafe_writes: ${14}
-	    #seuser: ${15}
-	    #serole: ${16}
-	    #content: ${17}
-	    #setype: ${18}
-	    #mode: '${19:0640}'
-	    #attributes: ${20:None}
-	    #backup: ${21:no}
+	    src:              ${2}
+	    #content:         ${3}
+	    dest:             ${4}
+	    #remote_src:      ${5:yes}
+	    #force:           ${6:yes}
+	    #owner:           ${7:root}
+	    #group:           ${8:root}
+	    #mode:            '${9:0640}'
+	    #directory_mode:  ${10}
+	    #backup:          ${11:yes}
+	    #decrypt:         ${12:yes}
+	    #validate:        ${13:/usr/sbin/visudo -cf %s}
+	    #follow:          ${14:no}
+	    #local_follow:    ${15:yes}
+	    #unsafe_writes:   ${16:no}
+	    #seuser:          ${17}
+	    #selevel:         ${18:s0}
+	    #serole:          ${19}
+	    #setype:          ${20}
+	    #attributes:      ${21:None}
+	${22}
 
 snippet cpanm
 	- name: ${1:task_description}
