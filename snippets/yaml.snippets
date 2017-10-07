@@ -399,22 +399,25 @@ snippet apt_rpm
 	    #update_cache: ${4}
 
 snippet archive
-	- name: ${1:task_description}
+	- name: ${1:Archive}
 	  archive:
-	    path: ${2}
-	    #group: ${3}
-	    #format: ${4:gz}
-	    #unsafe_writes: ${5}
-	    #selevel: ${6:s0}
-	    #seuser: ${7}
-	    #serole: ${8}
-	    #remove: ${9}
-	    #dest: ${10}
-	    #setype: ${11}
-	    #mode: '${12:0640}'
-	    #owner: ${13}
-	    #attributes: ${14:None}
-	    #exclude_path: ${15}
+	    path:
+	      - ${2}
+	    #exclude_path:
+	    # - ${3}
+	    #dest:           ${4}
+	    #owner:          ${5:root}
+	    #group:          ${6:root}
+	    #mode:           '${7:0640}'
+	    #remove:         ${8:True}
+	    #format:         ${9:gz|bz2|zip}
+	    #unsafe_writes:  ${10:no}
+	    #seuser:         ${11}
+	    #serole:         ${12}
+	    #selevel:        ${13:s0}
+	    #setype:         ${14}
+	    #attributes:     ${15:None}
+	${16}
 
 snippet aruba_command
 	- name: ${1:task_description}
