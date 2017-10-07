@@ -8083,9 +8083,9 @@ snippet fetch
 snippet file
 	- name: ${1:task_description}
 	  file:
-	    #state:          ${2:file|link|directory|hard|touch|absent}
-	    #src:            ${3}
-	    path:            ${4:[]}
+	    state:           ${2:file|link|directory|hard|touch|absent}
+	    path:            ${3:[]}
+	    src:             ${4}
 	    #owner:          ${5:ansible}
 	    #group:          ${6:ansible}
 	    #mode:           '${7:0750}'
