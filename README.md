@@ -1,54 +1,78 @@
 # ansible-snippets
 
-Ansible Vim snippets for SnipMate and UltiSnips.
+Ansible Vim snippets for
+  [UtilSnips](https://github.com/SirVer/ultisnips) and
+  [SnipMate](https://github.com/garbas/vim-snipmate)
+
+This is a fork of
+[phenomenes/ansible-snippets.git](https://github.com/phenomenes/ansible-snippets.git)
+which will eventually diverge and become a project of its own.
+
+_NOTE_: If you wish to have ansible snippets that match the latest
+version of ansible, you should use phenomenes fork instead as it
+appears to be auto-generated from the documentation.
+
+This fork is a work-in-progress to
+
+* Create meaningful/practical ansible snippets that would be used in
+  day-to-day scenarios working with ansible.
+
+* Rearrange and [Huffman encode](https://en.wikipedia.org/wiki/Huffman_coding)
+  the snippets to provide concise and logically organised completions.
+
+* Reduce the time taken to fill in a workable completion down to an
+  absolute minimum - while still allowing completions for unusual cases.
+
+* Provide snippets that complete common use-cases that are not purely
+  derived from the ansible module documentation.
+
+* Auto-generate snippets from the latest version of the documentation
+  under the
+  [Ansible Module Index](http://docs.ansible.com/ansible/latest/modules_by_category.html).
+
+* Eventually re-organize snippets into multiple smaller projects to
+  match the logical structure laid out by ansible in the
+  [Ansible Module Index](http://docs.ansible.com/ansible/latest/modules_by_category.html).
 
 ## Requirements
 
-* [UtilSnips](https://github.com/SirVer/ultisnips) or [SnipMate](https://github.com/garbas/vim-snipmate)
+* [UtilSnips](https://github.com/SirVer/ultisnips) or
+  [SnipMate](https://github.com/garbas/vim-snipmate)
 
-## Install
+## Installation
 
-To install via [vim-plug](https://github.com/junegunn/vim-plug) add
-`Plug 'phenomenes/ansible-snippets'` to your `~/.vimrc` and `:PlugInstall` or
-`$ vim +PlugInstall +qall`
+Recommended: Use your preferred vim plugin/add-on manager.
 
-To manually install, clone this repo to your favourite location:
+To manually install, clone this repo to your vim directory
 
 ```
-$ git clone https://github.com/phenomenes/ansible-snippets.git ~/ansible-snippets
-$ cp -r ~/ansible-snippets/* ~/.vim/
+cd ~/.vim/
+git clone https://github.com/phenomenes/ansible-snippets.git
 ```
+
+and then restart vim.
 
 ## Usage
 
-Open a `.yml` or `.yaml` file, in inster mode type `play` or any Ansible's
-module name and press `<tab>` to expand the snippet:
+Open a `.yml` or `.yaml` file that represents your ansible playbook
+or role task file and in insert mode type one of the
+available snippet completions (e.g. `play`, `apt`, etc) and then
 
-```
-- hosts: group
-  user: root
-  tasks:
+* Press `ctrl-r tab` to view possible snippet completions.
+* Press `tab` to expand the desired snippet, then complete each field
+  pressing `tab` again to move to the next field, etc.
 
-- name: task_description
-  ec2:
-    image: None
-    instance_type: None
-    #kernel:
-    #monitoring:
-    #user_data:
-    #termination_protection:
-    #private_ip:
-    #spot_type: one-time
-    #ec2_url:
-    #id:
-    #source_dest_check: True
-    #aws_secret_key:
-    #spot_wait_timeout: 600
-    ...
-```
+## Hacking
 
-Press `<tab>` again to move to next argument.
+* Edit the `ansible-snippets/snippets/yaml.snippets` file to
+  add/extend your snippets.
+
+* In your vim session, test out the snippet expansion
+  (vim does not need to be restarted).
+
+* Contribute back
 
 ## License
 
 BSD 2-clause "Simplified" License
+
