@@ -18001,10 +18001,10 @@ snippet service
 	    #runlevel: ${9:default}
 
 snippet set_fact
-	- name: ${1:task_description}
+	- name: ${1:Set username fact}
 	  set_fact:
-	    key_value: ${2:None}
-	    #cacheable: ${3}
+	    ${2:username}: '{{ ${3:ansible_env.USER} }}'
+	    #cacheable: ${4:True}
 
 snippet set_stats
 	- name: ${1:task_description}
