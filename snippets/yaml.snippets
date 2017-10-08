@@ -18013,6 +18013,13 @@ snippet set_fact_list
 	      "{{ (${3:list_foo} | default([])) + ['${4:foo}', '${5:bar}'] }}"
 	    #cacheable: ${6:True}
 
+snippet set_fact_dict
+	- name: ${1:Set dict fact}
+	  set_fact:
+	    ${2:dict_foo}:
+	      "{{ (${3:dict_foo} | default({})) | combine({${4:foo}: ${5:bar}})"
+	    #cacheable: ${6:True}
+
 snippet set_stats
 	- name: ${1:task_description}
 	  set_stats:
