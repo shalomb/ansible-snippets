@@ -18006,6 +18006,13 @@ snippet set_fact
 	    ${2:username}: '{{ ${3:ansible_env.USER} }}'
 	    #cacheable: ${4:True}
 
+snippet set_fact_list
+	- name: ${1:Set list fact}
+	  set_fact:
+	    ${2:list_foo}:
+	      "{{ (${3:list_foo} | default([])) + ['${4:foo}', '${5:bar}'] }}"
+	    #cacheable: ${6:True}
+
 snippet set_stats
 	- name: ${1:task_description}
 	  set_stats:
